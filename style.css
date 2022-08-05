@@ -1,3 +1,59 @@
 body {
-    background-color: #11747A;
+    background-color: #3c345c;
 }
+
+@font-face {
+    font-family: "INVASION2000";
+    src: url("C:/Users/erinc/Documents/GitHub/erxncxte.github.io/INVASION2000.ttf");
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    font-family: "INVASION2000";
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+#scroll-container {
+    overflow: hidden;
+    width: 50px;
+  }
+  
+  #scroll-text {
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    font-family: "INVASION2000";
+    
+    -moz-animation: my-animation 20s linear infinite;
+    -webkit-animation: my-animation 20s linear infinite;
+    animation: my-animation 20s linear infinite;
+  }
+  
+  /* for Firefox */
+  @-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+  }
+  
+  /* for Chrome */
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+  }
+  
+  @keyframes my-animation {
+    from {
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    to {
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+}  
