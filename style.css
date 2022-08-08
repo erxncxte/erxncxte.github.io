@@ -3,15 +3,12 @@ body {
 }
 
 @font-face {
-    font-family: "INVASION2000";
-    src: url("https://github.com/erxncxte/erxncxte.github.io/INVASION2000.ttf");
+  font-family: "NeonSans";
+  src: url("https://github.com/erxncxte/erxncxte.github.io/fonts/NeonSans.ttf");
 }
 
 h1 {
-    color: #fff;
-    text-align: center;
-    font-size: 50px;
-    font-family: "INVASION2000";
-    font-weight: 300;
-    margin-bottom: 40px;
+    font-family: "NeonSans";
+    color: #d1f7ff;
+    text-shadow: 2px 2px 3px #05d9e8;
 }
