@@ -4,11 +4,17 @@ body {
 
 @font-face {
   font-family: "NeonSans";
-  src: url("https://github.com/erxncxte/erxncxte.github.io/fonts/NeonSans.ttf");
+  src: url("https://drive.google.com/file/d/1CNHasH-wd9T77dXu5CJRdEnqBefRy1HC/view?usp=sharing");
 }
 
 h1 {
-    font-family: "NeonSans";
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 50px;
     color: #d1f7ff;
-    text-shadow: 2px 2px 3px #05d9e8;
+    text-align: center;
+}
+
+h2 {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 18px;
 }
