@@ -1,20 +1,3 @@
 body {
-    background-color: #3c345c;
-}
-
-@font-face {
-  font-family: "NeonSans";
-  src: url("https://drive.google.com/file/d/1CNHasH-wd9T77dXu5CJRdEnqBefRy1HC/view?usp=sharing");
-}
-
-h1 {
-    font-family: 'Rubik Glitch', cursive;
-    font-size: 50px;
-    color: #d1f7ff;
-    text-align: center;
-}
-
-h2 {
-  font-family: 'DotGothic16', sans-serif;
-  font-size: 18px;
+    background-image: url('https://cdn.discordapp.com/attachments/509354761523298316/1008296388980920400/ERIC_FINAL_SKETCH.jpg');
 }
