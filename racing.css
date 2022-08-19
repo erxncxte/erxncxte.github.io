@@ -1,3 +1,12 @@
 html {
     background-color: #991616 ;
 }
+
+h1 {
+    font-family: 'Silkscreen', cursive;
+    text-align: center;
+}
+
+p {
+    font-family: 'Ubuntu Mono', monospace;
+}
