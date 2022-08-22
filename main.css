@@ -1,7 +1,25 @@
 html {
-    background-image: url('https://cdn.discordapp.com/attachments/509354761523298316/1010156109715230760/ERIN-PIXEL-PIECE-ANIMATIONx3.gif');
+    background-image: url('https://cdn.discordapp.com/attachments/1010473329674694737/1010473429603995729/background.gif');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+}
+
+.github {
+    float: right;
+    padding-right: 9%;
+    background-color: transparent;
+    border: transparent;
+}
+
+.linkedin {
+    background-color: transparent;
+    border: transparent;
+}
+
+.racing {
+    background-color: transparent;
+    border: transparent;
+    float: right;
 }
