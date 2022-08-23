@@ -4,10 +4,6 @@ html {
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-}
-
-body {
-    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=70377);
     overflow: hidden;
 }
 
@@ -16,7 +12,6 @@ body {
     right: 0.3%;
     margin-top: -3%;
     padding-right: 9%;
-    background-color: transparent;
     border: transparent;
     opacity: 0%;
 }
@@ -26,7 +21,6 @@ body {
 }
 
 .linkedin {
-    background-color: transparent;
     border: transparent;
     position: absolute;
     left: 23.1%;
@@ -39,7 +33,6 @@ body {
 }
 
 .racing {
-    background-color: transparent;
     border: transparent;
     margin-top: 8.7%;
     position: absolute;
@@ -52,9 +45,12 @@ body {
 }
 
 .email {
-    background-color: transparent;
     border: transparent;
-    float: right;
+    background-color: transparent;
+    position: absolute;
+    left: 6%;
+    margin-top: -1%;
+    opacity: 0%;
 }
 
 .email:hover {
@@ -62,7 +58,6 @@ body {
 }
 
 .resume {
-    background-color: transparent;
     opacity: 0%;
     border: transparent;
     position: absolute;
