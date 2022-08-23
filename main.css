@@ -1,41 +1,53 @@
 html {
-    background-image: url('https://cdn.discordapp.com/attachments/1010473329674694737/1010473429603995729/background.gif');
+    background-image: url("https://cdn.discordapp.com/attachments/1010473329674694737/1011559279397978132/complete_scene.gif");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
+body {
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=70377);
+    overflow: hidden;
+}
+
 .github {
-    float: right;
+    position: absolute;
+    right: 0.3%;
+    margin-top: -3%;
     padding-right: 9%;
     background-color: transparent;
     border: transparent;
+    opacity: 0%;
 }
 
 .github:hover {
-    border: 2px solid lightskyblue;
     cursor: pointer;
 }
 
 .linkedin {
     background-color: transparent;
     border: transparent;
+    position: absolute;
+    left: 23.1%;
+    margin-top: 1.7%;
+    opacity: 0%;
 }
 
 .linkedin:hover {
-    border: 2px solid lightskyblue;
     cursor: pointer;
 }
 
 .racing {
     background-color: transparent;
     border: transparent;
-    float: right;
+    margin-top: 8.7%;
+    position: absolute;
+    right: -10px;
+    opacity: 0%;
 }
 
 .racing:hover {
-    border: 2px solid lightskyblue;
     cursor: pointer;
 }
 
@@ -46,17 +58,18 @@ html {
 }
 
 .email:hover {
-    border: 2px solid lightskyblue;
     cursor: pointer;
 }
 
 .resume {
     background-color: transparent;
+    opacity: 0%;
     border: transparent;
-    float: left;
+    position: absolute;
+    bottom: -60px;
+    left: -13px;
 }
 
 .resume:hover {
-    border: 5px solid lightskyblue;
     cursor: pointer;
 }
