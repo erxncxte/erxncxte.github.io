@@ -13,13 +13,50 @@ html {
     border: transparent;
 }
 
+.github:hover {
+    border: 2px solid lightskyblue;
+    cursor: pointer;
+}
+
 .linkedin {
     background-color: transparent;
     border: transparent;
+}
+
+.linkedin:hover {
+    border: 2px solid lightskyblue;
+    cursor: pointer;
 }
 
 .racing {
     background-color: transparent;
     border: transparent;
     float: right;
+}
+
+.racing:hover {
+    border: 2px solid lightskyblue;
+    cursor: pointer;
+}
+
+.email {
+    background-color: transparent;
+    border: transparent;
+    float: right;
+}
+
+.email:hover {
+    border: 2px solid lightskyblue;
+    cursor: pointer;
+}
+
+.resume {
+    background-color: transparent;
+    border: transparent;
+    float: left;
+}
+
+.resume:hover {
+    border: 5px solid lightskyblue;
+    cursor: pointer;
 }
