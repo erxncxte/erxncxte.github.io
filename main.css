@@ -1,25 +1,70 @@
 html {
-    background-image: url('https://cdn.discordapp.com/attachments/1010473329674694737/1010473429603995729/background.gif');
+    background-image: url("https://cdn.discordapp.com/attachments/1010473329674694737/1011559279397978132/complete_scene.gif");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .github {
-    float: right;
+    position: absolute;
+    right: 0.3%;
+    margin-top: -3%;
     padding-right: 9%;
-    background-color: transparent;
     border: transparent;
+    opacity: 0%;
+}
+
+.github:hover {
+    cursor: pointer;
 }
 
 .linkedin {
-    background-color: transparent;
     border: transparent;
+    position: absolute;
+    left: 23.1%;
+    margin-top: 1.7%;
+    opacity: 0%;
+}
+
+.linkedin:hover {
+    cursor: pointer;
 }
 
 .racing {
-    background-color: transparent;
     border: transparent;
-    float: right;
+    margin-top: 8.7%;
+    position: absolute;
+    right: -10px;
+    opacity: 0%;
+}
+
+.racing:hover {
+    cursor: pointer;
+}
+
+.email {
+    border: transparent;
+    background-color: transparent;
+    position: absolute;
+    left: 6%;
+    margin-top: -1%;
+    opacity: 0%;
+}
+
+.email:hover {
+    cursor: pointer;
+}
+
+.resume {
+    opacity: 0%;
+    border: transparent;
+    position: absolute;
+    bottom: -60px;
+    left: -13px;
+}
+
+.resume:hover {
+    cursor: pointer;
 }
