@@ -10,3 +10,7 @@ h1 {
 p {
     font-family: 'Ubuntu Mono', monospace;
 }
+
+img {
+    width: 30%;
+}
