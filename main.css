@@ -1,5 +1,5 @@
 html {
-    background-image: url("https://cdn.discordapp.com/attachments/1010473329674694737/1011559279397978132/complete_scene.gif");
+    background-image: url("https://cdn.discordapp.com/attachments/1010473329674694737/1010473429603995729/background.gif");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -7,13 +7,18 @@ html {
     overflow: hidden;
 }
 
+.erincate {
+    background-color: transparent;
+    margin-top: 150px;
+    margin-left: 34.2%;
+}
+
 .github {
-    position: absolute;
-    right: 0.3%;
-    margin-top: -3%;
-    padding-right: 9%;
+    right: 15.1%;
+    background-color: transparent;
+    margin-top: -3.2%;
+    margin-right: 8.89%;
     border: transparent;
-    opacity: 0%;
 }
 
 .github:hover {
@@ -22,10 +27,9 @@ html {
 
 .linkedin {
     border: transparent;
-    position: absolute;
-    left: 23.1%;
-    margin-top: 1.7%;
-    opacity: 0%;
+    background-color: transparent;
+    left: 23.23%;
+    margin-top: 1.23%;
 }
 
 .linkedin:hover {
@@ -34,10 +38,9 @@ html {
 
 .racing {
     border: transparent;
-    margin-top: 8.7%;
-    position: absolute;
-    right: -10px;
-    opacity: 0%;
+    margin-top: 8.3%;
+    background-color: transparent;
+    margin-left: 74.62%;
 }
 
 .racing:hover {
@@ -47,10 +50,8 @@ html {
 .email {
     border: transparent;
     background-color: transparent;
-    position: absolute;
-    left: 6%;
-    margin-top: -1%;
-    opacity: 0%;
+    left: 6.25%;
+    margin-top: -1.3%;
 }
 
 .email:hover {
@@ -58,13 +59,16 @@ html {
 }
 
 .resume {
-    opacity: 0%;
     border: transparent;
-    position: absolute;
-    bottom: -60px;
-    left: -13px;
+    background-color: transparent;
+    left: -3.8px;
+    margin-top: 17%;
 }
 
 .resume:hover {
     cursor: pointer;
 }
+
+#wrapper * {
+    position: absolute;
+ }

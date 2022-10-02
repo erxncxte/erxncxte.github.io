@@ -5,14 +5,39 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
-<!-- TO FIX - Github and Racing overlap -->
+<script>
+jQuery(document).ready(function($){
+ 
+    var cursor = $('.cursor');
+     
+    $('.image-cursor').mousemove(function(e){
+     
+    cursor.css({
+    top: e.clientY - cursor.height() / 2,
+    left: e.clientX - cursor.width() / 2
+    });
+    cursor.addClass('show-cursor');
+    $('body').addClass('hide-cursor');
+     
+    });
+     
+    $('.image-cursor').mouseleave(function() {
+     
+    cursor.removeClass('show-cursor');
+    $('body').removeClass('hide-cursor');
+     
+    });
+     
+    });
+</script>
 
 <body>
+    <div id="wrapper">
     <button class="github" onclick="window.open('https://github.com/erxncxte', '_blank')" type="button">
         <img src="images/github.gif">
     </button>
     <button class="racing" onclick="window.open('rmit-racing.html','_blank')" type="button">
-        <img src="images/racingbutton.png">
+        <img src="images/racing.gif">
     </button>
     <button class="linkedin" onclick="window.open('https://www.linkedin.com/in/erin-lumsden-0152521ba','_blank')" type="button">
         <img src="images/linkedin.gif">
@@ -23,5 +48,8 @@
     <a class="email" href = 'mailto: erin.cate.360@gmail.com?subject=Job Offer? ^.^' type="button">
         <img src="images/email.gif">
     </a>
+    <img class="erincate" src="images/buildingStatic.gif">
+    </div>
 </body>
+
 </html>
