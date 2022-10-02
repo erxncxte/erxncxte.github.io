@@ -9,7 +9,7 @@ html {
 
 .erincate {
     background-color: transparent;
-    margin-top: 150px;
+    margin-top: 7.8%;
     margin-left: 34.2%;
 }
 
@@ -30,11 +30,9 @@ html {
     background-color: transparent;
     left: 23.23%;
     margin-top: 1.23%;
+    cursor: url(cursors/lileft.png), auto;
 }
 
-.linkedin:hover {
-    cursor: pointer;
-}
 
 .racing {
     border: transparent;
@@ -61,7 +59,7 @@ html {
 .resume {
     border: transparent;
     background-color: transparent;
-    left: -3.8px;
+    left: -0.2%;
     margin-top: 17%;
 }
 
@@ -72,3 +70,23 @@ html {
 #wrapper * {
     position: absolute;
  }
+
+
+.hide-cursor {
+    cursor: none;
+    }
+     
+    .cursor {
+    -webkit-transition: all 0.2s ease !important;
+    -moz-transition: all 0.2s ease !important;
+    -o-transition: all 0.2s ease !important;
+    transition: all 0.2s ease !important;
+     
+    visibility: hidden;
+    opacity: 0;
+    }
+
+.show-cursor {
+    visibility: visible !important;
+    opacity: 1;
+    }

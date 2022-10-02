@@ -5,32 +5,6 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
-<script>
-jQuery(document).ready(function($){
- 
-    var cursor = $('.cursor');
-     
-    $('.image-cursor').mousemove(function(e){
-     
-    cursor.css({
-    top: e.clientY - cursor.height() / 2,
-    left: e.clientX - cursor.width() / 2
-    });
-    cursor.addClass('show-cursor');
-    $('body').addClass('hide-cursor');
-     
-    });
-     
-    $('.image-cursor').mouseleave(function() {
-     
-    cursor.removeClass('show-cursor');
-    $('body').removeClass('hide-cursor');
-     
-    });
-     
-    });
-</script>
-
 <body>
     <div id="wrapper">
     <button class="github" onclick="window.open('https://github.com/erxncxte', '_blank')" type="button">
