@@ -7,12 +7,6 @@ html {
     overflow: hidden;
 }
 
-.erincate {
-    background-color: transparent;
-    margin-top: 7.8%;
-    margin-left: 34.2%;
-    cursor: auto;
-}
 
 .github {
     right: 15.1%;
@@ -70,26 +64,13 @@ html {
     cursor: url(cursors/resume.png), auto;
 }
 
+.erincate {
+    background-color: transparent;
+    margin-top: 7.8%;
+    margin-left: 34.2%;
+    cursor: auto;
+}
+
 #wrapper * {
     position: absolute;
  }
-
-
-.hide-cursor {
-    cursor: none;
-    }
-     
-    .cursor {
-    -webkit-transition: all 0.2s ease !important;
-    -moz-transition: all 0.2s ease !important;
-    -o-transition: all 0.2s ease !important;
-    transition: all 0.2s ease !important;
-     
-    visibility: hidden;
-    opacity: 0;
-    }
-
-.show-cursor {
-    visibility: visible !important;
-    opacity: 1;
-    }
