@@ -11,6 +11,17 @@ p {
     font-family: 'Ubuntu Mono', monospace;
 }
 
-img {
-    width: 30%;
+.loom {
+    width: 50%;
+    transition: transform .2s;
+}
+
+.loom:hover {
+    transform: scale(1.6);
+}
+
+.imageCont {
+    justify-content: center;
+    align-items: center;
+    display:flex;
 }
