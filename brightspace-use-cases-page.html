@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Cases - Brightspace</title>
+    <style>
+        :root {
+            --primary: #2747E8;
+            --primary-light: #4D67FF;
+            --primary-dark: #1c36b8;
+            --secondary: #27304D;
+            --light: #F5F7FF;
+            --gray: #E9EBF2;
+            --dark: #18203A;
+            --success: #34C759;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.3;
+        }
+        
+        header {
+            background-color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .nav-items {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-items a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-items a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 71, 232, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, #F5F7FF 0%, #E1E5FF 100%);
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(39, 71, 232, 0.1);
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            color: var(--secondary);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* Use Cases Section */
+        .use-cases-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: var(--secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .tab {
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--secondary);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            background: transparent;
+            border: none;
+        }
+        
+        .tab.active {
+            color: var(--primary);
+        }
+        
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .use-case-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            transition: all 0.3s;
+        }
+        
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .use-case-header {
+            padding: 32px;
+            background: var(--light);
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .use-case-header h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        
+        .use-case-header p {
+            color: var(--secondary);
+            font-size: 16px;
+        }
+        
+        .use-case-content {
+            padding: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        
+        .use-case-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .use-case-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .use-case-details h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+        
+        .use-case-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        
+        .use-case-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+        
+        .use-case-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 18px;
+            height: 18px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232747E8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'%3E%3C/path%3E%3Cpolyline points='22 4 12 14.01 9 11.01'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .results-box {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 32px;
+        }
+        
+        .results-box h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+        
+        .results-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        
+        .metric {
+            margin-bottom: 8px;
+        }
+        
+        .metric-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+
+        .roi-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(52, 199, 89, 0.1);
+            color: var(--success);
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 4px;
+            margin-top: 16px;
+        }
+        
+        /* Benefits Comparison */
+        .benefits-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+        
+        .benefits-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .benefits-table th, .benefits-table td {
+            padding: 16px 24px;
+            text-align: center;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .benefits-table th {
+            background: var(--secondary);
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .benefits-table th:first-child {
+            text-align: left;
+        }
+        
+        .benefits-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .benefits-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .check-mark {
+            color: var(--success);
+            font-size: 18px;
+        }
+        
+        /* Case Studies */
+        .case-studies-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .case-study-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .case-study-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .case-study-content {
+            padding: 24px;
+        }
+        
+        .case-study-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(39, 71, 232, 0.1);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 12px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+        
+        .case-study-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+        
+        .case-study-card p {
+            color: var(--secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        
+        .case-study-metric {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        
+        .case-study-metric-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        
+        .case-study-metric-label {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+        
+        .case-study-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .case-study-link:hover {
+            color: var(--primary-dark);
+        }
+        
+        /* Implementation Process */
+        .process-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gray);
+            z-index: 0;
+        }
+        
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 18%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            box-shadow: 0 5px 15px rgba(39, 71, 232, 0.1);
+        }
+        
+        .process-step h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        
+        .process-step p {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+        
+        /* Certifications */
+        .certifications {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .certifications h3 {
+            margin-bottom: 40px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .certification-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+        
+        .certification-logo {
+            height: 60px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        .certification-logo:hover {
+            opacity: 1;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+        
+        .cta-content p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-white:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .footer-info h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+        
+        .footer-links a {
+            color: white;
+            opacity: 0.7;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .copyright {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+        
+        @media (max-width: 992px) {
+            .use-case-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .process-step {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .nav-items {
+                display: none;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .tabs {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .tab {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+            
+            .benefits-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .case-studies {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">Brightspace</div>
+            <div class="nav-items">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#" class="active">Use Cases</a>
+                <a href="#">Case Studies</a>
+                <a href="#">About Us</a>
+            </div>
+            <a href="#" class="btn">Contact Us</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Building Intelligence Solutions</div>
+                <h1>Intelligent Building Solutions for High-Traffic Environments</h1>
+                <p>See how Brightspace transforms airports, retail centers, shopping malls, and commercial offices into smarter, more sustainable spaces</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn">Request a Demonstration</a>
+                    <a href="#" class="btn btn-outline">View Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="use-cases-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Intelligent Solutions at Work</h2>
+                <p>Our AI-powered ecosystem optimizes energy use, enhances air quality, and creates healthier indoor environments while delivering measurable cost savings.</p>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab active" data-tab="airports">Airports</button>
+                <button class="tab" data-tab="retail">Large Format Retail</button>
+                <button class="tab" data-tab="malls">Shopping Malls</button>
+                <button class="tab" data-tab="offices">Commercial Offices</button>
+            </div>
+            
+            <div class="tab-content active" id="airports">
+                <div class="use-case-card">
+                    <div class="use-case-header">
+                        <h3>Airports</h3>
+                        <p>Optimize terminal environments for energy efficiency and passenger comfort</p>
+                    </div>
+                    <div class="use-case-content">
+                        <div class="use-case-image">
+                            <img src="/api/placeholder/600/400" alt="Airport Terminal">
+                        </div>
+                        <div class="use-case-details">
+                            <h4>Challenges</h4>
+                            <ul class="use-case-list">
+                                <li>Extremely variable occupancy patterns throughout the day</li>
+                                <li>Massive energy consumption across expansive spaces</li>
+                                <li>Strict air quality requirements and complex building systems</li>
+                                <li>Need for centralized management across multiple terminals</li>
+                            </ul>
+                            
+                            <h4>Our Solution</h4>
+                            <ul class="use-case-list">
+                                <li>Edge AI sensors for real-time occupancy monitoring</li>
+                                <li>Adaptive ventilation based on passenger flow</li>
+                                <li>Autonomous localized filtration to maintain air quality</li>
+                                <li>Comprehensive dashboard for terminal-wide monitoring</li>
+                            </ul>
+                            
+                            <div class="results-box">
+                                <h4>Results</h4>
+                                <div class="results-metrics">
+                                    <div class="metric">
+                                        <div class="metric-value">28%</div>
+                                        <div class="metric-label">energy reduction</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">75%</div>
+                                        <div class="metric-label">reduced outside air requirements</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">86%</div>
+                                        <div class="metric-label">reduction in excess ventilation</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">100%</div>
+                                        <div class="metric-label">privacy-protecting monitoring</div>
+                                    </div>
+                                </div>
+                                <div class="roi-badge">Premium ROI - Fastest Return on Investment</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="retail">
+                <div class="use-case-card">
+                    <div class="use-case-header">
+                        <h3>Large Format Retail</h3>
+                        <p>Create comfortable shopping environments while reducing operational costs</p>
+                    </div>
+                    <div class="use-case-content">
+                        <div class="use-case-image">
+                            <img src="/api/placeholder/600/400" alt="Large Format Retail Store">
+                        </div>
+                        <div class="use-case-details">
+                            <h4>Challenges</h4>
+                            <ul class="use-case-list">
+                                <li>Balancing shopper comfort with energy efficiency</li>
+                                <li>Maintaining consistent conditions across large floor areas</li>
+                                <li>Fluctuating occupancy throughout days and seasons</li>
+                                <li>Need for simplified management of complex systems</li>
+                            </ul>
+                            
+                            <h4>Our Solution</h4>
+                            <ul class="use-case-list">
+                                <li>Occupancy-based HVAC optimization</li>
+                                <li>Advanced filtration systems for improved air quality</li>
+                                <li>Zone-specific environmental control</li>
+                                <li>Integration with existing building management systems</li>
+                            </ul>
+                            
+                            <div class="results-box">
+                                <h4>Results</h4>
+                                <div class="results-metrics">
+                                    <div class="metric">
+                                        <div class="metric-value">39%</div>
+                                        <div class="metric-label">energy reduction</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">86%</div>
+                                        <div class="metric-label">reduction in excess ventilation</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">24%</div>
+                                        <div class="metric-label">improved air quality metrics</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">18+</div>
+                                        <div class="metric-label">months of data collection</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="malls">
+                <div class="use-case-card">
+                    <div class="use-case-header">
+                        <h3>Shopping Malls</h3>
+                        <p>Optimize multi-tenant environments for visitor comfort and operational efficiency</p>
+                    </div>
+                    <div class="use-case-content">
+                        <div class="use-case-image">
+                            <img src="/api/placeholder/600/400" alt="Shopping Mall">
+                        </div>
+                        <div class="use-case-details">
+                            <h4>Challenges</h4>
+                            <ul class="use-case-list">
+                                <li>Complex multi-tenant environments with varying requirements</li>
+                                <li>High energy costs across large common areas</li>
+                                <li>Changing occupancy patterns throughout the mall</li>
+                                <li>Need for central management of diverse spaces</li>
+                            </ul>
+                            
+                            <h4>Our Solution</h4>
+                            <ul class="use-case-list">
+                                <li>AI-driven efficiency across common areas and individual stores</li>
+                                <li>Real-time adaptation to foot traffic patterns</li>
+                                <li>Comprehensive air quality management throughout the facility</li>
+                                <li>Privacy-protecting occupancy monitoring</li>
+                            </ul>
+                            
+                            <div class="results-box">
+                                <h4>Results</h4>
+                                <div class="results-metrics">
+                                    <div class="metric">
+                                        <div class="metric-value">32%</div>
+                                        <div class="metric-label">energy reduction</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">78%</div>
+                                        <div class="metric-label">reduced outside air requirements</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">40%</div>
+                                        <div class="metric-label">reduction in operational costs</div>
+                                    </div>
+                                    <div class="metric">
+                                        <div class="metric-value">3+</div>
+                                        <div class="metric-label">sustainability certifications supported</div>
+                                    </div>
+                                </div>
+                                <div class="roi-badge">Premium ROI - High Return on Investment</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="offices">
+                <div class  
