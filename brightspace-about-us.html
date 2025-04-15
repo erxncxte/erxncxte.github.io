@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Brightspace</title>
+    <style>
+        :root {
+            --primary: #2747E8;
+            --primary-light: #4D67FF;
+            --primary-dark: #1c36b8;
+            --secondary: #27304D;
+            --light: #F5F7FF;
+            --gray: #E9EBF2;
+            --dark: #18203A;
+            --success: #34C759;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        header {
+            background-color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .nav-items {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-items a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-items a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 71, 232, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, #F5F7FF 0%, #E1E5FF 100%);
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(39, 71, 232, 0.1);
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            color: var(--secondary);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* Mission Vision Section */
+        .mission-vision-section {
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: var(--secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .mission-vision-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+        
+        .card-icon svg {
+            width: 35px;
+            height: 35px;
+            color: var(--primary);
+        }
+        
+        .card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .card p {
+            color: var(--secondary);
+        }
+
+        /* Results Section */
+        .results-section {
+            background: var(--light);
+        }
+        
+        .results-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .results-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+        
+        .results-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .results-text h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        
+        .results-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .results-text p {
+            font-size: 18px;
+            color: var(--secondary);
+            margin-bottom: 32px;
+        }
+        
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: var(--secondary);
+        }
+
+        /* Team Section */
+        .team-section {
+            background: white;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-member h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        
+        .team-member p {
+            font-size: 16px;
+            color: var(--primary);
+        }
+
+        /* Partners Section */
+        .partners-section {
+            background: var(--light);
+        }
+        
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .partner-logo {
+            height: 70px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .partner-logo:hover {
+            opacity: 1;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+        
+        .cta-content p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-white:hover {
+            background: var(--light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .footer-info h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+        
+        .footer-links a {
+            color: white;
+            opacity: 0.7;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .copyright {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+        
+        @media (max-width: 992px) {
+            .mission-vision-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .results-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .mission-vision-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .nav-items {
+                display: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">Brightspace</div>
+            <div class="nav-items">
+                <a href="#">Home</a>
+                <a href="#" class="active">About Us</a>
+                <a href="#">Products</a>
+                <a href="#">Solutions</a>
+                <a href="#">Case Studies</a>
+                <a href="#">Contact</a>
+            </div>
+            <a href="#" class="btn">Request a Demo</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Intelligent Building Solutions</div>
+                <h1>All buildings can be more efficient & healthier spaces.</h1>
+                <p>At Brightspace, we're devoted to transforming how building systems operate—leveraging technology to be a beacon of efficiency and a haven of health. Our mission is to unlock this potential—delivering innovative solutions that empower building owners and users to not only enhance energy efficiency but also elevate the quality of the environment within.</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn">Our Solutions</a>
+                    <a href="#" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="mission-vision-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Commitment to Intelligent Buildings</h2>
+                <p>At Brightspace, we're pioneering the integration of AI, energy efficiency, and air quality management to create building environments that adapt to actual usage patterns.</p>
+            </div>
+            
+            <div class="mission-vision-cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16l4-4-4-4M8 12h8"></path>
+                        </svg>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To create intelligent building solutions that optimize energy efficiency, enhance air quality, and deliver measurable ROI while supporting sustainability goals.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>A world where buildings actively respond to usage patterns, minimize energy waste, and create healthier environments for occupants while reducing environmental impact.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Our Approach</h3>
+                    <p>We combine advanced sensing technology, edge AI capabilities, and autonomous control systems to create responsive building environments that adapt to real-time needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="results-section">
+        <div class="container">
+            <div class="results-content">
+                <div class="results-image">
+                    <img src="/api/placeholder/600/400" alt="Brightspace Solution in Action">
+                </div>
+                <div class="results-text">
+                    <h2>Proven Results That Deliver</h2>
+                    <p>Our intelligent building solutions are already transforming properties across high-traffic environments including airports, retail centers, commercial offices, and shopping malls.</p>
+                    <p>By optimizing ventilation based on actual occupancy rather than rigid schedules, we help buildings achieve significant energy savings while enhancing indoor air quality.</p>
+                    
+                    <div class="results-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">39%</div>
+                            <div class="stat-label">Energy reduction vs. schedule-based control</div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-value">28%</div>
+                            <div class="stat-label">Energy reduction vs. CO₂-based control</div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-value">86%</div>
+                            <div class="stat-label">Reduction in excess ventilation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+                <p>Our diverse team of industry experts is passionate about creating smarter, more sustainable buildings through innovation and technology.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Robert de Burgh-Day">
+                    </div>
+                    <h3>Robert de Burgh-Day</h3>
+                    <p>Founder | CEO</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Errol Murray">
+                    </div>
+                    <h3>Errol Murray</h3>
+                    <p>Founder | CTO</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Glenn Gilbert">
+                    </div>
+                    <h3>Glenn Gilbert</h3>
+                    <p>Head of Growth</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Antony Beltrame">
+                    </div>
+                    <h3>Antony Beltrame</h3>
+                    <p>CFO</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Bart Fernando">
+                    </div>
+                    <h3>Bart Fernando</h3>
+                    <p>Senior Software Engineer</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Sebastian Kua">
+                    </div>
+                    <h3>Sebastian Kua</h3>
+                    <p>Electronics Engineer</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Quan Le">
+                    </div>
+                    <h3>Quan Le</h3>
+                    <p>Aerospace Mechanical Engineer</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Erin Lumsden">
+                    </div>
+                    <h3>Erin Lumsden</h3>
+                    <p>Software Engineer</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Richard Hallendorff">
+                    </div>
+                    <h3>Richard Hallendorff</h3>
+                    <p>Industrial Designer</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="/api/placeholder/180/180" alt="Karol Pabich">
+                    </div>
+                    <h3>Karol Pabich</h3>
+                    <p>Product Design Engineer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Partners & Certifications</h2>
+                <p>We work with leading organizations to deliver cutting-edge solutions that meet global certification standards.</p>
+            </div>
+            
+            <div class="partners-grid">
+                <img src="/api/placeholder/160/70" alt="Partner Logo" class="partner-logo">
+                <img src="/api/placeholder/160/70" alt="Partner Logo" class="partner-logo">
+                <img src="/api/placeholder/160/70" alt="Partner Logo" class="partner-logo">
+                <img src="/api/placeholder/160/70" alt="Partner Logo" class="partner-logo">
+                <img src="/api/placeholder/160/70" alt="Partner Logo" class="partner-logo">
+                <img src="/api/placeholder/160/70" alt="NABERS Certification" class="partner-logo">
+                <img src="/api/placeholder/160/70" alt="BREEAM Certification" class="partner-logo">
+                <img src="/api/placeholder/160/70" alt="LEED Rating" class="partner-logo">
+                <img src="/api/placeholder/160/70" alt="WELL Building Standard" class="partner-logo">
+                <img src="/api/placeholder/160/70" alt="Green Building Council" class="partner-logo">
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Transform Your Building with Brightspace</h2>
+                <p>Get in touch to discuss how our intelligent solutions can help you achieve significant energy savings, improve indoor air quality, and meet sustainability goals.</p>
+                <a href="#" class="btn btn-white">Request a Demonstration</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Brightspace</h3>
+                    <p>Intelligent building solutions designed for<br>
+                    commercial spaces with variable occupancy<br>
+                    patterns.</p>
+                    <p>Stenbright Pty Ltd T/A Brightspace AI<br>
+                    3/7 Byron St<br>
+                    Collingwood<br>
+                    Victoria 3066</p>
+                    <p>hello@brightspace.ai</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">For Shopping Malls</a></li>
+                        <li><a href="#">For Airports</a></li>
+                        <li><a href="#">For Commercial Offices</a></li>
+                        <li><a href="#">For Large Format Retail</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Brightspace AI. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
