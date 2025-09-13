@@ -1,19 +1,47 @@
-html {
-    background-image: url(images/background.gif);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+@media (max-width: 2000px), (max-height: 1200px) {
+  .border-text {
+    display: none;
+  }
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#wrapper {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    z-index: 1;
+    margin: auto;
+    overflow: hidden;
+    background-image: url('images/background.gif');
+    background-size: cover;
+    background-position: center;
+    box-shadow:
+        0 0 0 8px #222,
+        0 0 0 16px #555;
+}
 
 .github {
-    right: 15.1%;
     background-color: transparent;
-    margin-top: -3.2%;
-    margin-right: 8.89%;
+    margin: auto;
     border: transparent;
+    position: absolute;
+    right: 176px;
+    top: 9px;
 }
 
 .github:hover {
@@ -23,30 +51,21 @@ html {
 .linkedin {
     border: transparent;
     background-color: transparent;
-    left: 23.23%;
-    margin-top: 1.23%;
+    position: absolute;
+    left: 446px;
+    top: 94px;
 }
 
 .linkedin:hover {
     cursor: url(cursors/lileft.png), auto;
 }
 
-.racing {
-    border: transparent;
-    margin-top: 8.3%;
-    background-color: transparent;
-    margin-left: 74.62%;
-}
-
-.racing:hover {
-    cursor: url(cursors/rmitmotorsport.png), auto;
-}
-
 .email {
     border: transparent;
     background-color: transparent;
-    left: 6.25%;
-    margin-top: -1.3%;
+    position: absolute;
+    left: 120px;
+    top: 45px;
 }
 
 .email:hover {
@@ -56,8 +75,9 @@ html {
 .erincate {
     border: transparent;
     background-color: transparent;
-    left: -0.2%;
-    margin-top: 17%;
+    position: absolute;
+    left: -4px;
+    bottom: 4px;
 }
 
 .resume:hover {
@@ -65,12 +85,37 @@ html {
 }
 
 .resume {
+    border: transparent;
     background-color: transparent;
-    margin-top: 7.8%;
-    margin-left: 34.2%;
+    position: absolute;
+    left: 667px;
+    bottom: 448px;
     cursor: auto;
 }
 
-#wrapper * {
+.racing {
+    border: transparent;
+    background-color: transparent;
     position: absolute;
- }
+    right: -4px;
+    bottom: 391px;
+}
+
+.racing:hover {
+    cursor: url(cursors/rmitmotorsport.png), auto;
+}
+
+.border-text {
+    color: #fff;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4em;
+    position: fixed;
+    top: 4%;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+    z-index: 1000;
+    pointer-events: none;
+}
