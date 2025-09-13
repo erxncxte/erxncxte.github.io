@@ -1,12 +1,47 @@
-html {
-    background: #000; /* Black fallback */
+@media (max-width: 2000px), (max-height: 1200px) {
+  .border-text {
+    display: none;
+  }
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#wrapper {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    z-index: 1;
+    margin: auto;
+    overflow: hidden;
+    background-image: url('images/background.gif');
+    background-size: cover;
+    background-position: center;
+    box-shadow:
+        0 0 0 8px #222,
+        0 0 0 16px #555;
 }
 
 .github {
     background-color: transparent;
     margin: auto;
     border: transparent;
+    position: absolute;
+    right: 176px;
+    top: 9px;
 }
 
 .github:hover {
@@ -16,7 +51,9 @@ html {
 .linkedin {
     border: transparent;
     background-color: transparent;
-    margin: auto;
+    position: absolute;
+    left: 446px;
+    top: 94px;
 }
 
 .linkedin:hover {
@@ -26,7 +63,9 @@ html {
 .email {
     border: transparent;
     background-color: transparent;
-    margin: auto;
+    position: absolute;
+    left: 120px;
+    top: 45px;
 }
 
 .email:hover {
@@ -36,7 +75,9 @@ html {
 .erincate {
     border: transparent;
     background-color: transparent;
-    margin: auto;
+    position: absolute;
+    left: -4px;
+    bottom: 4px;
 }
 
 .resume:hover {
@@ -44,42 +85,37 @@ html {
 }
 
 .resume {
+    border: transparent;
     background-color: transparent;
-    margin: auto;
+    position: absolute;
+    left: 667px;
+    bottom: 448px;
     cursor: auto;
 }
 
 .racing {
     border: transparent;
     background-color: transparent;
-    margin-left: 15%;
+    position: absolute;
+    right: -4px;
+    bottom: 391px;
 }
 
 .racing:hover {
     cursor: url(cursors/rmitmotorsport.png), auto;
 }
 
-#wrapper {
-    width: 1920px;
-    height: 1080px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    background-image: url(images/background.gif);
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    box-shadow: 0 0 0 9999px #000; /* This creates black borders outside the 1920x1080 box */
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;   /* Vertically center */
-  min-width: 100vw;    /* Horizontally center */
+.border-text {
+    color: #fff;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4em;
+    position: fixed;
+    top: 4%;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+    z-index: 1000;
+    pointer-events: none;
 }
