@@ -8,11 +8,23 @@ h1 {
 }
 
 p {
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: "Roboto", sans-serif;
     color: white;
-    text-align: center;
+    text-align: justify;
     margin-left: 2%;
     margin-right: 2%;
+}
+
+h3 {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    padding-left: 10px;
+}
+
+ul {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    column-count: 2;
 }
 
 .loom {
@@ -41,4 +53,30 @@ p {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
+}
+
+.rrevo {
+    background-color: rgb(49, 48, 48);
+    border-radius: 10px;
+    width: 800px;
+    padding: 10px;
+}
+
+.rmitmotorsport {
+    background-color: rgb(49, 48, 48);
+    border-radius: 10px;
+    width: 800px;
+    padding: 10px;
+}
+
+.rmitracing {
+    background-color: rgb(49, 48, 48);
+    border-radius: 10px;
+    width: 800px;
+    padding: 10px;
+}
+
+.textboxes {
+    display: grid;
+    place-items: center;
 }
