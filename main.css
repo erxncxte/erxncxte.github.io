@@ -13,6 +13,20 @@ html, body {
     overflow: hidden;
 }
 
+.border-text {
+    color: #fff;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    position: fixed;
+    padding-top: 20px;
+    top: 0;
+    width: 100vw;
+    text-align: center;
+    pointer-events: none;
+}
+
 body {
     display: flex;
     align-items: center;
@@ -103,19 +117,4 @@ body {
 
 .racing:hover {
     cursor: url(cursors/rmitmotorsport.png), auto;
-}
-
-.border-text {
-    color: #fff;
-    font-family: "Tiny5", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 4em;
-    position: fixed;
-    top: 4%;
-    left: 0;
-    width: 100vw;
-    text-align: center;
-    z-index: 1000;
-    pointer-events: none;
 }
