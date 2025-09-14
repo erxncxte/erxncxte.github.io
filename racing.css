@@ -27,6 +27,33 @@ ul {
     column-count: 2;
 }
 
+.rrevo {
+    background-color: rgb(49, 48, 48);
+    border-radius: 10px;
+    width: 800px;
+    padding: 10px;
+}
+
+.rmitmotorsport {
+    background-color: rgb(49, 48, 48);
+    border-radius: 10px;
+    width: 800px;
+    padding: 10px;
+}
+
+.rmitracing {
+    background-color: rgb(49, 48, 48);
+    border-radius: 10px;
+    width: 800px;
+    padding: 10px;
+}
+
+.textboxes {
+    display: grid;
+    place-items: center;
+}
+
+
 .loom {
     width: 50%;
     transition: transform .2s;
@@ -53,30 +80,4 @@ ul {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
-}
-
-.rrevo {
-    background-color: rgb(49, 48, 48);
-    border-radius: 10px;
-    width: 800px;
-    padding: 10px;
-}
-
-.rmitmotorsport {
-    background-color: rgb(49, 48, 48);
-    border-radius: 10px;
-    width: 800px;
-    padding: 10px;
-}
-
-.rmitracing {
-    background-color: rgb(49, 48, 48);
-    border-radius: 10px;
-    width: 800px;
-    padding: 10px;
-}
-
-.textboxes {
-    display: grid;
-    place-items: center;
 }
